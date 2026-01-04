@@ -1,6 +1,14 @@
 /* =========================
    RESET
 ========================= */
+:root {
+  --content-left: 6vw;
+  --content-right: 4vw;
+  --measure: 70ch; /* largura do texto (igual para about + devlog) */
+  --section-gap: 4rem; /* espaço entre secções */
+  --block-gap: 1.75rem; /* espaço dentro de cada bloco */
+}
+
 *,
 *::before,
 *::after {
@@ -60,17 +68,18 @@ body {
   top: 0;
   left: 0;
 
-  width: 60vw; /* ocupa os 60% reais */
-  padding-block: 1.5rem; /* só vertical */
-  padding-inline: 2vw; /* pequeno, controlado */
+  width: 60vw;
+  padding-block: 1.5rem;
+
+  padding-left: var(--content-left);
+  padding-right: var(--content-right);
 
   display: flex;
-  justify-content: space-between; /* 👈 espalha o conteúdo */
+  justify-content: space-between;
   align-items: center;
 
   background: rgba(11, 13, 18, 0.85);
   backdrop-filter: blur(8px);
-
   z-index: 10;
 }
 
@@ -111,27 +120,21 @@ main {
   flex-direction: column;
 }
 
-/* =========================
-   SECTIONS (EDITORIAL)
-========================= */
-section {
-  min-height: 100vh;
-  display: grid;
-  align-items: center;
+#hero .section-inner {
+  max-width: var(--measure);
+  margin-inline: auto;
+  gap: 2rem;
 }
 
-.section-inner {
-  padding-top: 2rem;
-  width: 100%;
-  display: grid;
-  gap: 5rem;
+#hero p {
+  margin-top: 1.25rem;
 }
 
 .hero-title {
   font-family: "Noto Sans Mono", monospace;
   font-weight: 400;
 
-  font-size: clamp(0.8rem, 3cqw, 1.5rem);
+  font-size: clamp(1.2rem, 4cqw, 2.2rem);
   letter-spacing: 0.05em;
 
   white-space: normal; /* permite quebrar */
@@ -139,6 +142,13 @@ section {
 
   max-width: 100%;
   line-height: 1.3;
+}
+
+h1 {
+  font-family: "Noto Sans Mono", monospace;
+  text-align: center;
+  letter-spacing: 0.15em;
+  font-weight: 900;
 }
 
 h2 {
@@ -177,6 +187,7 @@ p {
   right: 2vw;
   top: 50%;
   transform: translateY(-50%);
+  animation: nudge 2s infinite;
 }
 
 @keyframes nudge {
@@ -198,7 +209,10 @@ p {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* 👈 ESPAÇO REAL ENTRE BLOCO */
+  gap: 3rem;
+
+  max-width: var(--measure);
+  margin-inline: auto;
 }
 
 .projects-track {
@@ -321,10 +335,16 @@ p {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  section {
+  .panel {
     padding-inline: 6vw;
     padding-block: 14vh;
   }
+}
+
+.panel .section-inner {
+  padding-top: 2rem;
+  display: grid;
+  gap: 5rem;
 }
 
 /*
@@ -336,3 +356,80 @@ section {
   outline: 1px solid lime;
 }
 */
+
+/* container editorial: centra o bloco dentro da coluna */
+.text-block {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+#about-text {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+.devlog {
+  padding-top: 20vh; /* para não ficar atrás da nav fixa */
+  padding-bottom: 15vh;
+}
+
+.devlog-entry {
+  margin-bottom: 4rem;
+}
+
+.devlog .devlog-intro,
+.devlog .devlog-list {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+/* landing */
+.panel {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+/* devlog NÃO é panel */
+.devlog section {
+  min-height: auto;
+  display: block;
+  padding-block: 0;
+}
+
+.devlog-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  margin-top: var(--section-gap);
+}
+
+.devlog-entry h2 {
+  text-align: left; /* no devlog, títulos de entries não devem estar ao centro */
+  margin-bottom: 0.75rem;
+}
+
+.devlog-entry .meta {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.devlog-entry a {
+  display: inline-block;
+  margin-top: 1.5rem;
+
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+
+  color: rgba(230, 227, 220, 0.6);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(230, 227, 220, 0.3);
+
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.devlog-entry a:hover {
+  color: rgba(230, 227, 220, 0.9);
+  border-color: rgba(230, 227, 220, 0.8);
+}
