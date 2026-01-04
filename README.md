@@ -1,6 +1,6 @@
 # Creative Landing Page
 
-demo here: https://a41900.github.io/portfolio-landing/
+demo here: https://a41900.github.io
 
 Personal landing page built with JavaScript and Canvas.
 This project focuses on visual clarity and interaction, using a simplified version of my generative motion system rather than experimental exploration.
