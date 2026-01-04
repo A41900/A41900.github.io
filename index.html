@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Creative developer exploring games, systems and interaction."
+    />
+    <title>Bea Porfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Noto+Sans+Mono:wght@100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="top-nav">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Projects</a>
+      <a href="devlog.html">Devlog</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+    <div class="layout">
+      <div class="content">
+        <main id="container">
+          <section id="hero" class="panel">
+            <h1 class="hero-title">
+              Junior creative developer working with code & motion.
+            </h1>
+          </section>
+          <section id="about" class="panel">
+            <div class="section-inner">
+              <h2>About me</h2>
+              <div id="about-text">
+                <p>Hi, I’m Beatriz. Welcome to my landing page.</p>
+                <p>
+                  I like exploring ideas through code, focusing on logic,
+                  structure and interaction. I enjoy building small systems,
+                  organising code, defining behaviours and experimenting with
+                  movement and responsiveness.
+                </p>
+                <p>
+                  I’m curious by nature and enjoy working in a way where
+                  structure and creativity coexist. This space reflects that
+                  process — experimenting, learning and refining ideas as I go.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="portfolio" class="panel">
+            <div class="section-inner">
+              <h2>Personal projects</h2>
+
+              <div class="projects-track">
+                <article class="project">
+                  <div class="project-text">
+                    <h3>Flow Field Experiment</h3>
+                    <p>
+                      Generative visual system using particles and vector
+                      fields.
+                    </p>
+                  </div>
+                  <div class="project-img">
+                    <img src="assets/effects.png" alt="Flow Field Experiment" />
+                  </div>
+
+                  <div class="project-links">
+                    <a
+                      href="https://a41900.github.io/generative-motion-studies"
+                      target="_blank"
+                      >Live demo</a
+                    >
+                    <a
+                      href="https://github.com/A41900/generative-motion-studies"
+                      target="_blank"
+                      >Code</a
+                    >
+                  </div>
+                </article>
+                <article class="project">
+                  <div class="project-text">
+                    <h3>Mini Game</h3>
+                    <p>
+                      Mini game is a solo project that started as a physics-ball
+                      built to explore movement and physics and evolved into a
+                      mini game with several features.
+                    </p>
+                  </div>
+                  <div class="project-img">
+                    <img src="assets/game.png" alt="Physics ball" />
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://a41900.github.io/physics-ball"
+                      target="_blank"
+                      >Live demo</a
+                    >
+                    <a
+                      href="https://github.com/A41900/physics-ball"
+                      target="_blank"
+                      >Code</a
+                    >
+                  </div>
+                </article>
+
+                <article class="project">
+                  <div class="project-text">
+                    <h3>Weather API</h3>
+                    <p>Practice working with real APIs and async logic.</p>
+                  </div>
+                  <div class="project-img">
+                    <img src="assets/weather.png" alt="Weather API" />
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://a41900.github.io/weather-app/"
+                      target="_blank"
+                      >Live demo</a
+                    >
+                    <a
+                      href="https://github.com/A41900/weather-app"
+                      target="_blank"
+                      >Code</a
+                    >
+                  </div>
+                </article>
+              </div>
+              <div class="scroll-hint">→</div>
+            </div>
+          </section>
+
+          <section id="contacts" class="panel">
+            <div class="section-inner">
+              <h2>Contacts</h2>
+              <ul class="contacts-list">
+                <li>
+                  <a href="mailto:bbeatrizandrade@gmail.com" target="_blank">
+                    <img src="assets/email.svg" alt="Email" />
+                    <span>Email</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/A41900" target="_blank">
+                    <img src="assets/github.svg" alt="GitHub" />
+                    <span>GitHub</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/beatriz-andrade-01b605192/"
+                    target="_blank"
+                  >
+                    <img src="assets/linkedin.svg" alt="linkedin" />
+                    <span>LinkedIn</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+      <div class="visual">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+
+    <p class="signature">Beatriz Andrade</p>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

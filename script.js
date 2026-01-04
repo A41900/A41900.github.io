@@ -1,0 +1,69 @@
+import { Scene } from "./core/Scene.js";
+import { StreamEffect } from "./effects/StreamEffect.js";
+import { FlowerEffect } from "./effects/FlowerEffect.js";
+
+let viewWidth = 0;
+let viewHeight = 0;
+let scene;
+let lastTime = 0;
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+let river;
+
+function init() {
+  scene = new Scene();
+  resizeCanvas();
+
+  river = new StreamEffect({
+    width: viewWidth,
+    height: viewHeight,
+    count: 600,
+    speed: 140,
+  });
+
+  scene.add(river);
+
+  window.effects = {
+    river,
+  };
+  lastTime = performance.now();
+  requestAnimationFrame(animate);
+}
+
+function resizeCanvas() {
+  const dpr = window.devicePixelRatio || 1;
+
+  viewWidth = window.innerWidth;
+  viewHeight = window.innerHeight;
+
+  canvas.style.width = viewWidth + "px";
+  canvas.style.height = viewHeight + "px";
+
+  canvas.width = Math.floor(viewWidth * dpr);
+  canvas.height = Math.floor(viewHeight * dpr);
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  if (scene) scene.resize(viewWidth, viewHeight);
+}
+
+function animate(time) {
+  const deltaMs = time - lastTime;
+  lastTime = time;
+  const dt = Math.min(deltaMs / 1000, 0.033);
+  scene.update(dt);
+  scene.draw(ctx);
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener("resize", () => {
+  resizeCanvas();
+});
+
+window.addEventListener("mousemove", (e) => {
+  scene.onMouseMove({ x: e.clientX, y: e.clientY });
+});
+
+init();

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Creative developer exploring games, systems and interaction."
+    />
+    <title>Bea Porfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Noto+Sans+Mono:wght@100&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="top-nav">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#portfolio">Projects</a>
+      <a href="devlog.html">Devlog</a>
+      <a href="index.html#contacts">Contacts</a>
+    </nav>
+
+    <div class="layout">
+      <div class="content">
+        <main class="devlog">
+          <!-- conteúdo do devlog -->
+          <section class="devlog-intro">
+            <h1>Devlog</h1>
+            <p>
+              Notes and reflections on my projects — decisions, mistakes, and
+              things I learned along the way.
+            </p>
+          </section>
+
+          <section class="devlog-list">
+            <article class="devlog-entry">
+              <h2>Flow Field Experiment</h2>
+              <p class="meta">Canvas · Noise · Motion systems</p>
+              <p>
+                What started as a visual experiment turned into a lesson about
+                the limits of Canvas 2D and why some ideas only make sense in
+                shaders.
+              </p>
+              <a href="#flow-field">Read entry →</a>
+            </article>
+
+            <article class="devlog-entry">
+              <h2>Mini Game</h2>
+              <p class="meta">Physics · Iteration · Scope</p>
+              <p>
+                A small physics prototype that slowly became a game, and taught
+                me the importance of controlling scope.
+              </p>
+              <a href="#mini-game">Read entry →</a>
+            </article>
+          </section>
+        </main>
+      </div>
+      <div class="visual">
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+    <p class="signature">Beatriz Andrade</p>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
