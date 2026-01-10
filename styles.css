@@ -9,6 +9,10 @@
   --block-gap: 1.75rem; /* espaço dentro de cada bloco */
 }
 
+html {
+  font-size: 80%;
+}
+
 *,
 *::before,
 *::after {
@@ -184,10 +188,11 @@ p {
 
 .scroll-hint {
   position: absolute;
-  right: 2vw;
-  top: 50%;
+  right: 4vw;
+  top: 57%;
   transform: translateY(-50%);
   animation: nudge 2s infinite;
+  font-size: 1.2rem;
 }
 
 @keyframes nudge {
