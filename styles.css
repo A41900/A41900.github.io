@@ -433,8 +433,42 @@ section {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  .panel {
-    padding-inline: 6vw;
-    padding-block: 14vh;
+  .visual {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .top-nav {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-track {
+    flex-direction: column;
+    gap: 4rem;
+    overflow-x: visible;
+  }
+
+  .project {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-hint {
+    display: none;
   }
 }
