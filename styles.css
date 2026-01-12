@@ -369,7 +369,21 @@ section {
 }
 
 .devlog-entry {
+  margin-top: 5rem;
   margin-bottom: 4rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.15) 4px,
+    transparent 4px,
+    transparent 10px
+  );
+  margin: 3rem 0;
 }
 
 .devlog .devlog-intro,

@@ -1,6 +1,5 @@
-import { Scene } from "./core/Scene.js";
-import { StreamEffect } from "./effects/StreamEffect.js";
-import { FlowerEffect } from "./effects/FlowerEffect.js";
+import { Scene } from "./background/core/Scene.js";
+import { StreamEffect } from "./background/effects/StreamEffect.js";
 
 let viewWidth = 0;
 let viewHeight = 0;
