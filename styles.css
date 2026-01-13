@@ -40,7 +40,7 @@ body {
 .content {
   width: 60vw;
   max-width: 60vw;
-  overflow-x: hidden; /* 🔑 FUNDAMENTAL */
+  overflow-x: hidden;
   padding-left: 6vw;
   padding-right: 4vw;
   background-color: #0b0d12;
